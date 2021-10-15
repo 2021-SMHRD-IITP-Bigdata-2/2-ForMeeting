@@ -1,0 +1,30 @@
+<!--
+* 작성자 : 강현욱
+* 작성일 : 2021.10.14
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시물 작성폼</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/front/css/boardwrite.css}">
+</head>
+
+<body>
+<!--    <header class="header" style="background-image: url('/front/img/slide1.jpg')">-->
+    <header class="header">
+        <div class="layout">
+            <ul>
+                <li>오늘 나의 일상은?</li>
+            </ul>
+            <form class="form" action="/board/writepro" method="post">
+                <input name="title" type="text">
+                <textarea name="content"> </textarea><br></br>
+                <!--<input class="writer" name="writer" type="text">-->
+                <button class="btn" type="submit">작성</button>
+            </form>
+        </div>
+    </header>
+</body>
+</html>

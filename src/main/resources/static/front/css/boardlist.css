@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Sunflower:wght@300;500;700&display=swap');
+
+.box{
+    border:0.1px solid gainsboro;
+    border-radius: 20px;
+    height: 500px;
+    width: 500px;
+}
+.layout{
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.layout ul{
+    background-color: deeppink;
+    display: block;
+    border:1px solid deeppink;
+    color:#ffffff;
+    margin:0;
+    padding:0;
+    margin-bottom: 50px;
+}
+.layout ul li{
+    text-align: center;
+    font-size: 40px;
+    list-style: none;
+    color:#ffffff;
+    font-family: 'Sunflower', sans-serif;
+}
+.layout a{
+    text-decoration: none;
+}
