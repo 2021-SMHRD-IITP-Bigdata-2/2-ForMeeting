@@ -15,13 +15,13 @@ import java.util.List;
 @Service //컨트롤러에서 이용함
 public class BoardService {
 
-    @Autowired //자바는 new를 쓰지만 Autowired를 쓰면 스프링빈이 알아서 해줌
+    @Autowired //자바는 new를 쓰지만 Autowired를 쓰면 스프링빈이 알아서 읽어와서 주입을 해줌
     private BoardRepository boardRepository;
 
     //글 작성 처리
     public void write(Board board){
 
-        this.boardRepository.save(board);
+        this.boardRepository.save(board); //save 안에 엔터티를 넣어준다.
     }
 
     //게시글 리스트 처리

@@ -23,6 +23,7 @@ public class BoardController {
 
     @GetMapping("/board/write") //어떤 url로 접근할 것인지 접근 -> localhost:8080/board/write 여기로 접근하면 boardWrite html을 보여줌
     public String boardWriteForm(){
+
         return "boardWrite"; //"어떤 HTML 파일로 보내줄 건지 입력"
     }
 

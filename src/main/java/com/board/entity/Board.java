@@ -13,17 +13,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity //내가 만들었던 컬럼들을 적으면 된다.
-@Data
+@Entity //클래스 Board가 DB에 있는 테이블을 의미
+@Data //BoardController에서 get~를 실행할 수 있도록 해줌
 public class Board {
 
     @Id //PK를 의미
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //IDENTITY:마리아DB에서 사용
     private Integer id;
 
     private String title;
 
     private String content;
+
+    private Integer view;
 }
 
 

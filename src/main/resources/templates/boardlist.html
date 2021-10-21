@@ -13,28 +13,28 @@
 
 <body>
 
-    <div class="layout">
+<div class="layout">
+    <div class="container">
         <table>
             <ul>
                 <li>일상 게시판</li>
             </ul>
-            <div class="box">
-                    <tr>
-                        <th>글번호</th>
-                        <th>제목</th>
-                    </tr>
-                <tbody>
-                    <tr th:each="board:${list}"> <!--리스트에서 보드가 없어질 때까지 반복-->
-                        <td th:text="${board.id}">1</td>      <!--localhost:8080/board/view?id=1 ~ 120-->
-                        <td>
-                                <a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}"></a></td>
-                        </td>
-                    </tr>
-                </tbody>
-            </div>
+            <tr>
+                <!--                <th>글번호</th>-->
+                <th>제목</th>
+            </tr>
+            <tbody>
+            <tr th:each="board:${list}"> <!--리스트에서 보드가 없어질 때까지 반복-->
+                <!--                <td th:text="${board.id}">1</td>      &lt;!&ndash;localhost:8080/board/view?id=1 ~ 120&ndash;&gt;-->
+                <td>
+                    <a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}"></a>
+                    <p th:text="${board.content}"></p>
+                    <img src="/front/img/perm@2x.png" alt="조회수">
+                </td>
+            </tr>
+            </tbody>
         </table>
-
     </div>
-
+</div>
 </body>
 </html>
