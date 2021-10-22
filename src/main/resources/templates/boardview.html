@@ -7,14 +7,30 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>게시글 상세 페이지</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/front/css/boardview.css}">
 </head>
 <body>
+<div class="layout">
+    <table>
+        <ul>
+            <li>일상 게시판</li>
+        </ul>
+        <td>
+            <h1 th:text="${board.title}">제목</h1> <!--board안에 있는 제목을 태그 안에 넣어준다-->
+            <p th:text="${board.content}">내용</p>
+            <a th:href="@{${board.filepath}}">다운</a>
+            <a th:href="@{/board/modify/{id}(id = ${board.id})}">수정</a>
+            <a th:href="@{/board/delete(id=${board.id})}">삭제</a>
+            <div class="goMain">
+                <a th:href="@{/board/list}">메인으로</a>
+            </div>
+        </td>
 
-<h1 th:text="${board.title}">제목입니다.</h1>
-<p th:text="${board.content}">내용이 들어갈 부분입니다.</p>
-<a th:href="@{/board/delete(id=${board.id})}">글삭제</a>
-<a th:href="@{/board/modify/{id}(id = ${board.id})}">수정</a>
+    </table>
+
+</div>
 
 </body>
 </html>

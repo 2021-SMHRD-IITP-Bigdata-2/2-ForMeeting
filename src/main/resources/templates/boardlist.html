@@ -7,6 +7,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>게시글 리스트 페이지</title>
     <link rel="stylesheet" type="text/css" th:href="@{/front/css/boardlist.css}">
 </head>
@@ -14,27 +15,26 @@
 <body>
 
 <div class="layout">
-    <div class="container">
-        <table>
-            <ul>
-                <li>일상 게시판</li>
-            </ul>
-            <tr>
-                <!--                <th>글번호</th>-->
-                <th>제목</th>
-            </tr>
-            <tbody>
-            <tr th:each="board:${list}"> <!--리스트에서 보드가 없어질 때까지 반복-->
-                <!--                <td th:text="${board.id}">1</td>      &lt;!&ndash;localhost:8080/board/view?id=1 ~ 120&ndash;&gt;-->
-                <td>
-                    <a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}"></a>
-                    <p th:text="${board.content}"></p>
-                    <img src="/front/img/perm@2x.png" alt="조회수">
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+    <table>
+        <ul>
+            <li>일상 게시판</li>
+        </ul>
+        <tr>
+            <!--<th>글번호</th>-->
+            <!--                <th>제목</th>-->
+        </tr>
+        <tbody>
+        <a class="goWrite" th:href="@{/board/write}">글쓰기</a>
+        <tr th:each="board:${list}"> <!--리스트에서 보드가 없어질 때까지 반복-->
+            <!--                <td th:text="${board.id}">1</td>      &lt;!&ndash;localhost:8080/board/view?id=1 ~ 120&ndash;&gt;-->
+            <td>
+                <a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}"></a>
+                <p th:text="${board.content}"></p>
+                <img src="/front/img/perm@2x.png" alt="조회수">
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

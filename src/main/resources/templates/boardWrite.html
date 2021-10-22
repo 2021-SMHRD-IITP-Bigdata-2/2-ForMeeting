@@ -4,6 +4,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>게시물 작성폼</title>
     <link rel="stylesheet" type="text/css" th:href="@{/front/css/boardwrite.css}">
 </head>
@@ -18,10 +19,10 @@
             <ul>
                 <li>오늘 나의 일상은?</li>
             </ul>
-            <form class="form" action="/board/writepro" method="post">
+            <form class="form" action="/board/writepro" method="post" enctype="multipart/form-data">
                 <input name="title" type="text">
                 <textarea name="content"> </textarea><br></br>
-                <!--<input class="writer" name="writer" type="text">-->
+                <input type="file" name="file">
                 <button class="btn" type="submit">작성</button>
             </form>
             </div>
